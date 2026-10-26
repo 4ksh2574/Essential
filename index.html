@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f5f2">
+<meta name="description" content="Λκsη Sηαrmα — Student • Chess Player. Samasya pe nahi, samadhan pe focus Karo.">
+<title>Λκsη Sηαrmα — Personal Profile</title>
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f2f4f0;
+  --ink:#1c1e19;
+  --muted:#72776c;
+  --glass-bg: rgba(255, 255, 255, 0.42);
+  --glass-bg-hover: rgba(255, 255, 255, 0.58);
+  --glass-border: rgba(255, 255, 255, 0.75);
+  --glass-border-bottom: rgba(255, 255, 255, 0.25);
+  --glass-shadow: 0 20px 40px -15px rgba(28, 30, 25, 0.07), inset 0 1px 1px rgba(255, 255, 255, 0.95), inset 0 -1px 1px rgba(0, 0, 0, 0.03);
+  --glass-shadow-hover: 0 26px 50px -12px rgba(28, 30, 25, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1);
+  --glass-blur: blur(28px) saturate(190%);
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",sans-serif;
+  background:#f2f4f0;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* Ambient Liquid Glass Orbs */
+.bg-orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(80px);
+  pointer-events:none;
+  z-index:-1;
+  opacity:0.65;
+  animation:float 18s ease-in-out infinite alternate;
+}
+.bg-orb-1{top:-10%;left:-5%;width:420px;height:420px;background:rgba(202,228,172,0.7)}
+.bg-orb-2{top:20%;right:-10%;width:380px;height:380px;background:rgba(215,225,248,0.65);animation-delay:-6s}
+.bg-orb-3{bottom:-5%;left:20%;width:450px;height:450px;background:rgba(238,222,208,0.5);animation-delay:-12s}
+
+@keyframes float{
+  0%{transform:translate(0, 0) scale(1)}
+  50%{transform:translate(30px, 20px) scale(1.05)}
+  100%{transform:translate(-20px, 40px) scale(0.95)}
+}
+
+a{color:inherit;text-decoration:none}
+.page{width:min(100% - 34px,530px);margin:auto;padding:32px 0 32px}
+
+/* Liquid Glass Navbar */
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:37px}
+.brand{display:flex;align-items:center;gap:9px;font-size:10px;font-weight:800;letter-spacing:.15em;color:#5a6054}
+.mark{
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-bottom-color:var(--glass-border-bottom);
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:var(--glass-blur);
+  -webkit-backdrop-filter:var(--glass-blur);
+  font-size:12px;
+  font-weight:900;
+}
+.status{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 13px;
+  border-radius:99px;
+  border:1px solid var(--glass-border);
+  border-bottom-color:var(--glass-border-bottom);
+  background:var(--glass-bg);
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:var(--glass-blur);
+  -webkit-backdrop-filter:var(--glass-blur);
+  font-size:9px;
+  font-weight:750;
+  color:#526340;
+  letter-spacing:.06em;
+}
+.dot{width:6px;height:6px;border-radius:50%;background:#81b64c;box-shadow:0 0 10px #81b64c}
+
+/* Hero Section */
+.hero{text-align:center;animation:fade-up .8s var(--ease-apple) both}
+.avatar-frame{
+  width:104px;
+  height:104px;
+  margin:0 auto 19px;
+  padding:4px;
+  border-radius:36px;
+  background:linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.2));
+  border:1px solid var(--glass-border);
+  box-shadow:0 20px 40px rgba(0,0,0,0.06), inset 0 1px 2px #fff;
+  transform:rotate(-4deg);
+  transition:transform 0.4s var(--ease-apple);
+}
+.avatar-frame:hover{transform:rotate(0deg) scale(1.03)}
+.avatar{
+  height:100%;
+  width:100%;
+  border-radius:31px;
+  display:grid;
+  place-items:center;
+  background:radial-gradient(circle at 24% 15%,#fffde8,transparent 40%),linear-gradient(135deg,#d2e5be,#a8c48a 55%,#d8d2f0);
+  color:#223318;
+  font-size:26px;
+  font-weight:900;
+  letter-spacing:-.1em;
+}
+h1{font-size:clamp(34px,8vw,46px);line-height:1;letter-spacing:-.06em;margin:11px 0 12px;font-weight:850}
+h1 .x{font-weight:600;color:#858b7e}
+.bio{max-width:325px;margin:0 auto;color:#6f746a;font-size:13px;line-height:1.8}
+
+/* Social Row */
+.social-row{display:flex;justify-content:center;gap:12px;margin:25px 0 36px}
+.social{
+  height:44px;
+  width:44px;
+  display:grid;
+  place-items:center;
+  border-radius:16px;
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-bottom-color:var(--glass-border-bottom);
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:var(--glass-blur);
+  -webkit-backdrop-filter:var(--glass-blur);
+  transition:transform .3s var(--ease-apple), box-shadow .3s var(--ease-apple), background .3s;
+}
+.social:hover{
+  transform:translateY(-3px) scale(1.06);
+  background:var(--glass-bg-hover);
+  box-shadow:var(--glass-shadow-hover);
+}
+.social svg{width:20px;height:20px;display:block}
+
+/* Section Head */
+.section-head{display:flex;align-items:center;justify-content:space-between;margin:0 2px 14px}
+.section-head h2{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#81867b;margin:0;font-weight:800}
+.section-head .count-circle{
+  width:31px;
+  height:31px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  border:1px solid var(--glass-border);
+  background:var(--glass-bg);
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:var(--glass-blur);
+  -webkit-backdrop-filter:var(--glass-blur);
+  font-size:9px;
+  color:#73786c;
+  font-weight:750;
+}
+
+/* Feature Hero Card (Chess.com) */
+.feature{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 104px;
+  gap:10px;
+  min-height:158px;
+  padding:21px;
+  border-radius:28px;
+  border:1px solid var(--glass-border);
+  border-bottom-color:var(--glass-border-bottom);
+  background:linear-gradient(135deg, rgba(255,255,255,0.65), rgba(235,244,222,0.45));
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:var(--glass-blur);
+  -webkit-backdrop-filter:var(--glass-blur);
+  transition:transform .35s var(--ease-apple), box-shadow .35s var(--ease-apple), background .35s;
+  animation:fade-up .7s .05s var(--ease-apple) both;
+}
+.feature:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 90% 10%, rgba(129,182,76,0.18), transparent 45%);
+  pointer-events:none;
+}
+.feature:hover{
+  transform:translateY(-4px) scale(1.01);
+  background:linear-gradient(135deg, rgba(255,255,255,0.78), rgba(235,244,222,0.6));
+  box-shadow:var(--glass-shadow-hover);
+}
+.feature-copy{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:15px}
+.overline{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#5c8135;font-weight:800}
+.feature h3{font-size:21px;letter-spacing:-.055em;margin:7px 0 5px;font-weight:850}
+.feature p{margin:0;font-size:11px;line-height:1.6;color:#6f7469;max-width:245px}
+.open-link{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:800;color:#435c27}
+.open-link span{
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.85);
+  border:1px solid #fff;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+  font-size:13px;
+}
+.feature-art{position:relative;align-self:stretch;display:grid;place-items:center}
+.orbit{position:absolute;width:98px;height:98px;border:1px solid rgba(129,182,76,0.35);border-radius:50%;transform:rotate(-25deg)}
+.orbit:after{content:"";position:absolute;top:7px;left:11px;width:7px;height:7px;border-radius:50%;background:#81b64c;box-shadow:0 0 10px #81b64c}
+.chess-mark{
+  position:relative;
+  width:68px;
+  height:68px;
+  border-radius:24px;
+  background:linear-gradient(145deg,rgba(255,255,255,0.92),rgba(255,255,255,0.4));
+  border:1px solid #ffffff;
+  display:grid;
+  place-items:center;
+  box-shadow:0 12px 30px rgba(0,0,0,0.06), inset 0 1px 1px #fff;
+  transform:rotate(5deg);
+  transition:transform 0.35s var(--ease-apple);
+}
+.feature:hover .chess-mark{transform:rotate(0deg) scale(1.05)}
+.chess-mark svg{width:38px;height:38px}
+
+/* Curated Tiles Layout */
+.curated{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.tile{
+  position:relative;
+  overflow:hidden;
+  min-height:136px;
+  padding:17px;
+  border-radius:24px;
+  border:1px solid var(--glass-border);
+  border-bottom-color:var(--glass-border-bottom);
+  background:var(--glass-bg);
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:var(--glass-blur);
+  -webkit-backdrop-filter:var(--glass-blur);
+  transition:transform .3s var(--ease-apple), box-shadow .3s var(--ease-apple), background .3s;
+  animation:fade-up .7s var(--ease-apple) both;
+}
+.tile:hover{
+  transform:translateY(-3px) scale(1.01);
+  background:var(--glass-bg-hover);
+  box-shadow:var(--glass-shadow-hover);
+}
+.tile-top{display:flex;align-items:center;justify-content:space-between}
+.app-icon{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:rgba(255,255,255,0.75);
+  border:1px solid #ffffff;
+  box-shadow:inset 0 1px #fff, 0 4px 12px rgba(0,0,0,0.04);
+}
+.app-icon svg{width:21px;height:21px}
+.tile-arrow{font-size:14px;color:#8c9185;transition:transform 0.25s var(--ease-apple)}
+.tile:hover .tile-arrow{transform:translate(2px, -2px)}
+.tile h3{font-size:13px;letter-spacing:-.025em;margin:18px 0 4px;font-weight:800}
+.tile p{font-size:10px;line-height:1.5;color:#7e8377;margin:0}
+.tile.youtube{background:linear-gradient(145deg, rgba(255,255,255,0.6), rgba(248,228,226,0.38))}
+.tile.github{grid-column:span 2}
+
+.footer{padding-top:28px;text-align:center;font-size:10px;letter-spacing:.035em;color:#70766a;font-weight:650}
+
+@keyframes fade-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(min-width:650px){.page{padding-top:42px}.nav{margin-bottom:45px}}
+@media(max-width:370px){.feature{grid-template-columns:1fr 76px;padding:16px}.orbit{width:76px;height:76px}.chess-mark{width:56px;height:56px}.feature h3{font-size:19px}}
+</style>
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<main class="page">
+<header class="nav">
+<a class="brand" href="#" aria-label="Home"><span class="mark">ΛS</span><span>PERSONAL PROFILE</span></a>
+<div class="status"><span class="dot"></span> welcome</div>
+</header>
+
+<section class="hero" aria-label="Profile">
+<div class="avatar-frame"><div class="avatar">ΛS</div></div>
+<h1>Λκsη <span class="x">Sηαrmα</span></h1>
+<p class="bio">Student • Chess Player</p>
+</section>
+
+<!-- APP ICONS -->
+<div class="social-row" aria-label="Social shortcuts">
+<a class="social" href="https://www.chess.com/member/4ksh2574" target="_blank" rel="noopener noreferrer" aria-label="Chess.com" title="Chess.com"><svg viewBox="0 0 24 24" fill="#81B64C" aria-hidden="true"><path d="M12 0a3.85 3.85 0 0 0-3.875 3.846A3.84 3.84 0 0 0 9.73 6.969l-2.79 1.85c0 .622.144 1.114.434 1.649H9.83c-.014.245-.014.549-.014.925 0 .025.003.048.006.071-.064 1.353-.507 3.472-3.62 5.842-.816.625-1.423 1.495-1.806 2.533a.33.33 0 0 0-.045.084 8.124 8.124 0 0 0-.39 2.516c0 .1.216 1.561 8.038 1.561s8.038-1.46 8.038-1.561c0-2.227-.824-4.048-2.24-5.133-4.034-3.08-3.586-5.74-3.644-6.838h2.458c.29-.535.434-1.027.434-1.649l-2.79-1.836a3.86 3.86 0 0 0 1.604-3.123A3.873 3.873 0 0 0 13.445.275c-.004-.002-.01.004-.015.004A3.76 3.76 0 0 0 12 0Z"/></svg></a>
+<a class="social" href="https://github.com/4ksh2574" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.5-1.3-1.23-1.65-1.23-1.65-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.92.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.27-2.6 5.21-5.08 5.49.4.35.75 1.02.75 2.06v3.12c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg></a>
+<a class="social" href="https://x.com/4ksh2574" target="_blank" rel="noopener noreferrer" aria-label="X" title="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.4L5.58 22H2.44l7.25-8.29L1.8 2h6.4l4.43 6.77L18.9 2Zm-1.1 17.86h1.73L7.27 4.03H5.41L17.8 19.86Z"/></svg></a>
+<a class="social" href="https://youtube.com/@4ksh2574" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.12C19.55 3.57 12 3.57 12 3.57s-7.55 0-9.4.51A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.12c1.85.51 9.4.51 9.4.51s7.55 0 9.4-.51a3 3 0 0 0 2.1-2.12A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></a>
+</div>
+
+<section aria-labelledby="featured-title">
+<div class="section-head"><h2 id="featured-title">Essentials</h2><span class="count-circle" aria-label="4 links">(4)</span></div>
+
+<!-- BIG HERO TILE: CHESS.COM -->
+<a class="feature" href="https://www.chess.com/member/4ksh2574" target="_blank" rel="noopener noreferrer">
+<div class="feature-copy"><div><div class="overline">Strategy · Tactics · Play</div><h3>Chess.com Profile</h3><p>Games, ratings, tactics & recent moves.</p></div><span class="open-link">Play & challenge <span>↗</span></span></div>
+<div class="feature-art" aria-hidden="true"><div class="orbit"></div><div class="chess-mark"><svg viewBox="0 0 24 24" fill="#81B64C"><path d="M12 0a3.85 3.85 0 0 0-3.875 3.846A3.84 3.84 0 0 0 9.73 6.969l-2.79 1.85c0 .622.144 1.114.434 1.649H9.83c-.014.245-.014.549-.014.925 0 .025.003.048.006.071-.064 1.353-.507 3.472-3.62 5.842-.816.625-1.423 1.495-1.806 2.533a.33.33 0 0 0-.045.084 8.124 8.124 0 0 0-.39 2.516c0 .1.216 1.561 8.038 1.561s8.038-1.46 8.038-1.561c0-2.227-.824-4.048-2.24-5.133-4.034-3.08-3.586-5.74-3.644-6.838h2.458c.29-.535.434-1.027.434-1.649l-2.79-1.836a3.86 3.86 0 0 0 1.604-3.123A3.873 3.873 0 0 0 13.445.275c-.004-.002-.01.004-.015.004A3.76 3.76 0 0 0 12 0Z"/></svg></div></div>
+</a>
+
+<!-- ORIGINAL SIZED TILES -->
+<div class="curated">
+<a class="tile" href="https://x.com/4ksh2574" target="_blank" rel="noopener noreferrer"><div class="tile-top"><span class="app-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.4L5.58 22H2.44l7.25-8.29L1.8 2h6.4l4.43 6.77L18.9 2Zm-1.1 17.86h1.73L7.27 4.03H5.41L17.8 19.86Z"/></svg></span><span class="tile-arrow">↗</span></div><h3>𝕏 / Thoughts</h3><p>Updates, ideas & things worth sharing.</p></a>
+<a class="tile youtube" href="https://youtube.com/@4ksh2574" target="_blank" rel="noopener noreferrer"><div class="tile-top"><span class="app-icon"><svg viewBox="0 0 24 24" fill="#e0443d"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.12C19.55 3.57 12 3.57 12 3.57s-7.55 0-9.4.51A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.12c1.85.51 9.4.51 9.4.51s7.55 0 9.4-.51a3 3 0 0 0 2.1-2.12A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></span><span class="tile-arrow">↗</span></div><h3>YouTube / Watch</h3><p>Videos, learning & inspiration.</p></a>
+<a class="tile github" href="https://github.com/4ksh2574" target="_blank" rel="noopener noreferrer"><div class="tile-top"><span class="app-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.5-1.3-1.23-1.65-1.23-1.65-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.92.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.27-2.6 5.21-5.08 5.49.4.35.75 1.02.75 2.06v3.12c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg></span><span class="tile-arrow">↗</span></div><h3>My GitHub</h3><p>Projects, experiments, and little ideas taking shape.</p></a>
+</div>
+</section>
+
+<footer class="footer">Samasya pe nahi, samadhan pe focus Karo</footer>
+</main>
+</body>
+</html>
