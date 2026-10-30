@@ -348,7 +348,6 @@ a:focus-visible{outline:2px solid #789b55;outline-offset:4px;border-radius:14px}
 .cursor-cat .cheek{fill:#e9aaa0;opacity:.8}
 @keyframes tailSway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(12deg)}}
 @keyframes catBreathe{0%,100%{margin-top:0}50%{margin-top:-3px}}
-@media(hover:none),(pointer:coarse){.cursor-cat{display:none}}
 @media(prefers-reduced-motion:reduce){.cursor-cat,.cursor-cat *{animation:none!important;transition:none!important}}
 
 </style>
@@ -417,9 +416,11 @@ a:focus-visible{outline:2px solid #789b55;outline-offset:4px;border-radius:14px}
 <script>
 (()=>{
   const cat=document.getElementById('cursorCat');
-  if(!cat || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if(!cat) return;
+  const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let idleTimer;
+  let wanderTimer;
   const place=(x,y)=>{
     const pad=34;
     cat.style.left=Math.max(pad,Math.min(innerWidth-pad,x))+'px';
@@ -432,16 +433,27 @@ a:focus-visible{outline:2px solid #789b55;outline-offset:4px;border-radius:14px}
     place(x,y);
     cat.classList.add('is-idle');
   };
-  document.addEventListener('pointermove',e=>{
-    clearTimeout(idleTimer);
-    cat.classList.remove('is-idle');
-    place(e.clientX+22,e.clientY+20);
-  },{passive:true});
-  document.addEventListener('pointerleave',()=>{
-    idleTimer=setTimeout(wander,220);
-  });
-  document.addEventListener('pointerenter',()=>clearTimeout(idleTimer));
-  if(!reduced) idleTimer=setTimeout(wander,900);
+  if(finePointer){
+    document.addEventListener('pointermove',e=>{
+      clearTimeout(idleTimer);
+      cat.classList.remove('is-idle');
+      place(e.clientX+22,e.clientY+20);
+    },{passive:true});
+    document.addEventListener('pointerleave',()=>{idleTimer=setTimeout(wander,220)});
+    document.addEventListener('pointerenter',()=>clearTimeout(idleTimer));
+    idleTimer=setTimeout(wander,500);
+  }else{
+    // Touch screens have no cursor: keep the little companion visible,
+    // let taps call it over, and let it occasionally choose a new resting spot.
+    wander();
+    document.addEventListener('pointerdown',e=>{
+      cat.classList.remove('is-idle');
+      place(e.clientX+24,e.clientY-28);
+      clearInterval(wanderTimer);
+      if(!reduced) wanderTimer=setInterval(wander,8500);
+    },{passive:true});
+    if(!reduced) wanderTimer=setInterval(wander,8500);
+  }
 })();
 </script>
 
