@@ -277,6 +277,58 @@ h1 .x{font-weight:600;color:#858b7e}
 
 @keyframes fade-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* Editorial polish: warmer atmosphere, tactile details, and quiet motion */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.19;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+.page{position:relative}
+.nav{animation:fade-up .65s var(--ease-apple) both}
+.brand{transition:opacity .25s ease,transform .25s var(--ease-apple)}
+.brand:hover{opacity:.78;transform:translateY(-1px)}
+.mark{position:relative;overflow:hidden;transition:transform .35s var(--ease-apple),box-shadow .35s ease}
+.mark::after{content:"";position:absolute;inset:-60% auto -60% -70%;width:45%;transform:rotate(24deg);background:rgba(255,255,255,.8);animation:markGleam 6s ease-in-out infinite}
+@keyframes markGleam{0%,72%,100%{left:-70%;opacity:0}78%{opacity:.8}92%{left:130%;opacity:0}}
+.avatar-frame{position:relative;isolation:isolate}
+.avatar-frame::before,.avatar-frame::after{content:"";position:absolute;inset:-9px;border:1px solid rgba(129,182,76,.23);border-radius:40px;transform:rotate(7deg);z-index:-1;transition:transform .7s var(--ease-apple),border-color .5s ease}
+.avatar-frame::after{inset:-16px;border-color:rgba(177,190,156,.18);transform:rotate(-9deg)}
+.avatar-frame:hover::before{transform:rotate(0deg) scale(1.04);border-color:rgba(129,182,76,.45)}
+.avatar-frame:hover::after{transform:rotate(-3deg) scale(1.03)}
+.avatar{position:relative;overflow:hidden}
+.avatar::after{content:"";position:absolute;inset:-30%;background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.48) 50%,transparent 62%);transform:translateX(-100%) rotate(12deg);transition:transform .9s var(--ease-apple)}
+.avatar-frame:hover .avatar::after{transform:translateX(100%) rotate(12deg)}
+h1{background:linear-gradient(110deg,#22251f 5%,#56634b 48%,#24271f 92%);background-clip:text;-webkit-background-clip:text;color:transparent}
+h1 .x{color:#929889;-webkit-text-fill-color:#929889}
+.bio{letter-spacing:.015em}
+.social{position:relative;overflow:hidden}
+.social::after,.app-icon::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.9),transparent 68%);opacity:0;transition:opacity .3s ease;pointer-events:none}
+.social:hover::after{opacity:1}
+.section-head{position:relative}
+.section-head h2{display:flex;align-items:center;gap:9px}
+.section-head h2::before{content:"";width:19px;height:1px;background:linear-gradient(90deg,#8eaa6d,transparent)}
+.feature,.tile{will-change:transform}
+.feature::after,.tile::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(115deg,transparent 22%,rgba(255,255,255,.34) 48%,transparent 72%);transform:translateX(-135%);transition:transform .85s var(--ease-apple)}
+.feature:hover::after,.tile:hover::after{transform:translateX(135%)}
+.feature{transform-style:preserve-3d}
+.orbit{animation:orbitDrift 14s ease-in-out infinite alternate}
+@keyframes orbitDrift{from{transform:rotate(-25deg) scale(.96)}to{transform:rotate(12deg) scale(1.04)}}
+.chess-mark{z-index:1}
+.tile:nth-child(1){animation-delay:.12s}
+.tile:nth-child(2){animation-delay:.2s}
+.tile:nth-child(3){animation-delay:.28s}
+.tile h3{transition:transform .28s var(--ease-apple),color .28s ease}
+.tile:hover h3{transform:translateX(2px);color:#526d35}
+.tile.github{background:linear-gradient(135deg,rgba(255,255,255,.57),rgba(228,235,224,.48))}
+.footer{position:relative;margin-top:4px;padding-top:27px}
+.footer::before{content:"✳";position:absolute;top:0;left:50%;transform:translateX(-50%);font-size:10px;color:#91a77a}
+a:focus-visible{outline:2px solid #789b55;outline-offset:4px;border-radius:14px}
+::selection{background:rgba(164,190,130,.32);color:#26311d}
+@media(prefers-reduced-motion:reduce){
+  .mark::after,.orbit{animation:none!important}
+  .avatar-frame::before,.avatar-frame::after{transition:none!important}
+}
+
 @media(min-width:650px){.page{padding-top:42px}.nav{margin-bottom:45px}}
 @media(max-width:370px){.feature{grid-template-columns:1fr 76px;padding:16px}.orbit{width:76px;height:76px}.chess-mark{width:56px;height:56px}.feature h3{font-size:19px}}
 </style>
