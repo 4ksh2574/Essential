@@ -332,6 +332,65 @@ a:focus-visible{outline:2px solid #789b55;outline-offset:4px;border-radius:14px}
 @media(min-width:650px){.page{padding-top:42px}.nav{margin-bottom:45px}}
 @media(max-width:370px){.feature{grid-template-columns:1fr 76px;padding:16px}.orbit{width:76px;height:76px}.chess-mark{width:56px;height:56px}.feature h3{font-size:19px}}
 
+
+/* Screenshot-inspired default theme: quiet neutral surfaces + teal interaction */
+:root{
+  color-scheme:light;
+  --bg:#f7f8f7;
+  --ink:#171918;
+  --muted:#777d7a;
+  --glass-bg:rgba(255,255,255,.92);
+  --glass-bg-hover:#fff;
+  --glass-border:rgba(20,28,26,.045);
+  --glass-border-bottom:rgba(20,28,26,.035);
+  --glass-shadow:0 5px 22px rgba(20,28,26,.045),inset 0 1px 0 rgba(255,255,255,.95);
+  --glass-shadow-hover:0 9px 28px rgba(20,28,26,.075),inset 0 1px 0 rgba(255,255,255,1);
+  --glass-blur:blur(18px) saturate(120%);
+}
+body{background:#f7f8f7;color:#171918}
+body::before{opacity:.055;mix-blend-mode:normal}
+.bg-orb{opacity:0!important;animation:none!important}
+.brand{color:#343a37}
+.mark{background:#fff;border-color:#f0f1f0;box-shadow:0 2px 10px rgba(0,0,0,.035)}
+.status{background:#fff;color:#505b57;border-color:#eff1ef;box-shadow:0 2px 10px rgba(0,0,0,.035)}
+.dot{background:#10b5a3;box-shadow:0 0 8px rgba(16,181,163,.35)}
+h1{background:none;color:#171918;-webkit-text-fill-color:#171918}
+h1 .x{color:#777d7a;-webkit-text-fill-color:#777d7a}
+.bio{color:#777d7a}
+.avatar-frame{background:#fff;border:1px solid #f0f1f0;box-shadow:0 8px 24px rgba(0,0,0,.045)}
+.avatar-frame::before,.avatar-frame::after{border-color:rgba(16,181,163,.12)}
+.avatar{background:linear-gradient(145deg,#f1f5f3,#e4eeeb);color:#24332f}
+.social{background:#fff;border:1px solid #f0f1f0;box-shadow:0 3px 12px rgba(0,0,0,.04)}
+.social:hover{background:#fff;box-shadow:0 7px 18px rgba(0,0,0,.07)}
+.section-head h2{color:#777d7a}
+.section-head h2::before{background:#10b5a3}
+.section-head .count-circle{background:#fff;border:1px solid #eff1ef;box-shadow:0 2px 9px rgba(0,0,0,.035);color:#626966}
+.feature,.feature:hover{
+  background:#fff;border:1px solid #eff1ef;
+  box-shadow:0 5px 22px rgba(20,28,26,.045),inset 0 1px 0 #fff;
+}
+.feature:before{background:radial-gradient(circle at 90% 10%,rgba(16,181,163,.075),transparent 48%)}
+.overline{color:#0c9f90}
+.feature p,.tile p{color:#777d7a}
+.open-link{color:#087f74}
+.open-link span{background:#f0faf8;border:1px solid #e5f5f1;box-shadow:none;color:#087f74}
+.orbit{border-color:rgba(16,181,163,.22)}
+.orbit:after{background:#10b5a3;box-shadow:0 0 9px rgba(16,181,163,.35)}
+.chess-mark{background:#f8fbfa;border-color:#edf4f1;box-shadow:0 7px 18px rgba(0,0,0,.045)}
+.tile,.tile:hover{
+  background:#fff;border:1px solid #eff1ef;
+  box-shadow:0 5px 20px rgba(20,28,26,.04),inset 0 1px 0 #fff;
+}
+.tile.youtube,.tile.github{background:#fff}
+.app-icon{background:#f7f9f8;border:1px solid #f0f2f1;box-shadow:none}
+.tile-arrow{color:#858c88}
+.tile:hover h3{color:#0b9587}
+.footer{color:#777d7a}
+.footer::before{color:#10b5a3}
+a:focus-visible{outline-color:#10b5a3}
+::selection{background:rgba(16,181,163,.18);color:#17211f}
+@media(prefers-reduced-motion:reduce){.bg-orb{display:none}}
+
 </style>
 </head>
 <body>
