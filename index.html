@@ -391,6 +391,52 @@ a:focus-visible{outline-color:#10b5a3}
 ::selection{background:rgba(16,181,163,.18);color:#17211f}
 @media(prefers-reduced-motion:reduce){.bg-orb{display:none}}
 
+
+/* Merged creations tile — Android-inspired expressive surfaces */
+.creations{
+  position:relative;isolation:isolate;overflow:hidden;
+  margin-top:18px;padding:19px;
+  border:1px solid #e9eeec;border-radius:30px;
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(246,250,249,.96));
+  box-shadow:0 8px 28px rgba(24,38,34,.055),inset 0 1px 0 #fff;
+}
+.creations::before{
+  content:"";position:absolute;z-index:-1;inset:-35% -15% auto 30%;height:180px;
+  background:radial-gradient(ellipse,rgba(16,181,163,.105),transparent 68%);
+  pointer-events:none;
+}
+.creations-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 1px 14px}
+.creations-kicker{font-size:9px;letter-spacing:.17em;text-transform:uppercase;font-weight:850;color:#7b8581}
+.creations-note{font-size:10px;color:#9aa29e}
+.creation-list{display:grid;gap:9px}
+.creation-link{
+  position:relative;display:grid;grid-template-columns:44px minmax(0,1fr) 30px;
+  align-items:center;gap:12px;min-height:66px;padding:10px 12px;
+  border:1px solid rgba(232,238,235,.95);border-radius:21px;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 2px 9px rgba(24,38,34,.025),inset 0 1px 0 #fff;
+  transition:transform .32s var(--ease-apple),box-shadow .32s ease,background .32s ease,border-color .32s ease;
+}
+.creation-link:hover{transform:translateY(-2px) scale(1.008);background:#fff;border-color:#dcece8;box-shadow:0 7px 18px rgba(24,38,34,.065),inset 0 1px 0 #fff}
+.creation-icon{
+  width:44px;height:44px;display:grid;place-items:center;border-radius:16px;
+  color:#087f74;background:linear-gradient(145deg,#effaf7,#e5f4f0);
+  border:1px solid #e4f1ed;font-size:15px;font-weight:900;letter-spacing:-.07em;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95);
+}
+.creation-icon.ax{color:#222;background:linear-gradient(145deg,#f5f6f5,#e9edeb);border-color:#e9edeb}
+.creation-icon.or{color:#5678b8;background:linear-gradient(145deg,#f1f5ff,#e8eefc);border-color:#e8eefc}
+.creation-copy{min-width:0}
+.creation-copy strong{display:block;font-size:13px;letter-spacing:-.025em;font-weight:820;color:#202623}
+.creation-copy span{display:block;margin-top:3px;font-size:10px;line-height:1.35;color:#858e89}
+.creation-arrow{
+  width:29px;height:29px;display:grid;place-items:center;border-radius:50%;
+  color:#79847f;background:#f5f8f7;font-size:14px;
+  transition:transform .3s var(--ease-apple),background .3s,color .3s;
+}
+.creation-link:hover .creation-arrow{transform:translate(2px,-2px);background:#eaf8f4;color:#078f80}
+@media(prefers-reduced-motion:reduce){.creation-link,.creation-arrow{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -433,6 +479,30 @@ a:focus-visible{outline-color:#10b5a3}
 <a class="tile" href="https://x.com/4ksh2574" target="_blank" rel="noopener noreferrer"><div class="tile-top"><span class="app-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.4L5.58 22H2.44l7.25-8.29L1.8 2h6.4l4.43 6.77L18.9 2Zm-1.1 17.86h1.73L7.27 4.03H5.41L17.8 19.86Z"/></svg></span><span class="tile-arrow">↗</span></div><h3>𝕏 / Thoughts</h3><p>Updates, ideas & things worth sharing.</p></a>
 <a class="tile youtube" href="https://youtube.com/@4ksh2574" target="_blank" rel="noopener noreferrer"><div class="tile-top"><span class="app-icon"><svg viewBox="0 0 24 24" fill="#e0443d"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.12C19.55 3.57 12 3.57 12 3.57s-7.55 0-9.4.51A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.12c1.85.51 9.4.51 9.4.51s7.55 0 9.4-.51a3 3 0 0 0 2.1-2.12A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></span><span class="tile-arrow">↗</span></div><h3>YouTube / Watch</h3><p>Videos, learning & inspiration.</p></a>
 <a class="tile github" href="https://github.com/4ksh2574" target="_blank" rel="noopener noreferrer"><div class="tile-top"><span class="app-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.5-1.3-1.23-1.65-1.23-1.65-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.92.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.27-2.6 5.21-5.08 5.49.4.35.75 1.02.75 2.06v3.12c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg></span><span class="tile-arrow">↗</span></div><h3>My GitHub</h3><p>Projects, experiments, and little ideas taking shape.</p></a>
+</div>
+
+<div class="creations" aria-label="My creations">
+  <div class="creations-head">
+    <span class="creations-kicker">Made by me</span>
+    <span class="creations-note">Selected projects · 03</span>
+  </div>
+  <div class="creation-list">
+    <a class="creation-link" href="https://4ksh2574.github.io/AXChess/" target="_blank" rel="noopener noreferrer" aria-label="Open AXChess">
+      <span class="creation-icon ax" aria-hidden="true">AX</span>
+      <span class="creation-copy"><strong>AXChess</strong><span>Play, analyse &amp; explore chess</span></span>
+      <span class="creation-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="creation-link" href="https://4ksh2574.github.io/OpenRole/" target="_blank" rel="noopener noreferrer" aria-label="Open OpenRole">
+      <span class="creation-icon or" aria-hidden="true">OR</span>
+      <span class="creation-copy"><strong>OpenRole</strong><span>Personal vacancies &amp; micro-resumes</span></span>
+      <span class="creation-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="creation-link" href="https://axcalculate.oneapp.dev" target="_blank" rel="noopener noreferrer" aria-label="Open AXCalculate">
+      <span class="creation-icon" aria-hidden="true">∑</span>
+      <span class="creation-copy"><strong>AXCalculate</strong><span>A minimal, modern calculator</span></span>
+      <span class="creation-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
 </div>
 </section>
 
