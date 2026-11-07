@@ -1,0 +1,11 @@
+{
+  "name": "Essential Page",
+  "short_name": "Essential",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f8f7",
+  "theme_color": "#f7f8f7",
+  "icons": [
+    { "src": "./ax-logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
