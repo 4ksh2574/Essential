@@ -437,6 +437,7 @@ a:focus-visible{outline-color:#10b5a3}
 .creation-link:hover .creation-arrow{transform:translate(2px,-2px);background:#eaf8f4;color:#078f80}
 @media(prefers-reduced-motion:reduce){.creation-link,.creation-arrow{transition:none!important}}
 
+.nav-actions{display:flex;align-items:center;gap:8px}.tab-link{color:#526c5d;transition:transform .3s var(--ease-apple),background .3s}.tab-link:hover{transform:translateY(-2px);background:var(--glass-bg-hover)}.tab-link span{font-size:9px}@media(max-width:390px){.nav-actions{gap:5px}.tab-link{padding:8px 9px;font-size:8px}.tab-link span{font-size:8px}}
 </style>
 </head>
 <body>
@@ -448,7 +449,7 @@ a:focus-visible{outline-color:#10b5a3}
 <main class="page">
 <header class="nav">
 <a class="brand" href="#" aria-label="Home"><span class="mark">ΛS</span><span>PERSONAL PROFILE</span></a>
-<div class="status"><span class="dot"></span> welcome</div>
+<div class="nav-actions"><a class="status tab-link" href="https://4ksh2574.github.io/EssentialTab/" aria-label="Open EssentialTab new tab">↗ <span>NEW TAB</span></a><div class="status"><span class="dot"></span> welcome</div></div>
 </header>
 
 <section class="hero" aria-label="Profile">
