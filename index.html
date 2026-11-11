@@ -463,6 +463,21 @@ a:focus-visible{outline-color:#10b5a3}
 .hero-copy{left:clamp(28px,8%,52px)}
 @media(min-width:650px){.hero{margin-bottom:20px}.hero-art{height:530px}}
 
+
+/* Pixel-inspired Minecraft-style name */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&display=swap');
+.page{padding-top:24px}
+.nav{margin-bottom:22px}
+.hero-copy h1{
+  font-family:"Pixelify Sans","Courier New",monospace;
+  font-weight:700;
+  letter-spacing:0;
+  line-height:1.12;
+  font-size:clamp(30px,7vw,48px);
+  text-shadow:1px 1px 0 rgba(23,25,24,.08),2px 2px 0 rgba(23,25,24,.045);
+}
+@media(max-width:390px){.page{padding-top:18px}.nav{margin-bottom:16px}.hero-copy h1{font-size:clamp(25px,7vw,34px)}}
+
 </style>
 </head>
 <body>
@@ -472,6 +487,10 @@ a:focus-visible{outline-color:#10b5a3}
 <div class="bg-orb bg-orb-3"></div>
 
 <main class="page">
+<header class="nav">
+<a class="brand" href="#" aria-label="Home"><span class="mark">ΛS</span><span>PERSONAL PROFILE</span></a>
+<div class="nav-actions"><a class="status tab-link" href="https://4ksh2574.github.io/EssentialTab/" aria-label="Open EssentialTab new tab">↗ <span>NEW TAB</span></a><div class="status"><span class="dot"></span> welcome</div></div>
+</header>
 
 <section class="hero" aria-label="Profile">
 <div class="hero-art">
@@ -485,10 +504,7 @@ a:focus-visible{outline-color:#10b5a3}
 </div>
 </section>
 
-<header class="nav">
-<a class="brand" href="#" aria-label="Home"><span class="mark">ΛS</span><span>PERSONAL PROFILE</span></a>
-<div class="nav-actions"><a class="status tab-link" href="https://4ksh2574.github.io/EssentialTab/" aria-label="Open EssentialTab new tab">↗ <span>NEW TAB</span></a><div class="status"><span class="dot"></span> welcome</div></div>
-</header>
+
 
 <!-- APP ICONS -->
 <div class="social-row" aria-label="Social shortcuts">
