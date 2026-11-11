@@ -465,18 +465,11 @@ a:focus-visible{outline-color:#10b5a3}
 
 
 /* Pixel-inspired Minecraft-style name */
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&display=swap');
+
 .page{padding-top:24px}
 .nav{margin-bottom:22px}
-.hero-copy h1{
-  font-family:"Pixelify Sans","Courier New",monospace;
-  font-weight:700;
-  letter-spacing:0;
-  line-height:1.12;
-  font-size:clamp(30px,7vw,48px);
-  text-shadow:1px 1px 0 rgba(23,25,24,.08),2px 2px 0 rgba(23,25,24,.045);
-}
-@media(max-width:390px){.page{padding-top:18px}.nav{margin-bottom:16px}.hero-copy h1{font-size:clamp(25px,7vw,34px)}}
+
+
 
 
 /* Keep the navigation integrated over the artwork */
@@ -484,9 +477,21 @@ a:focus-visible{outline-color:#10b5a3}
 .hero{position:relative}
 .hero-art{position:relative}
 .hero .nav{
-  position:absolute;z-index:4;top:18px;left:50%;
-  width:min(calc(100% - 34px),530px);
-  margin:0;transform:translateX(-50%);
+  position:absolute;z-index:4;top:16px;left:0;right:0;
+  width:auto;max-width:530px;margin:0 auto;padding:0 17px;
+  transform:none;box-sizing:border-box;
+}
+.hero .nav .brand{min-width:0;gap:7px}
+.hero .nav .brand>span:last-child{white-space:nowrap;font-size:9px}
+.hero .nav .nav-actions{flex-shrink:0;gap:6px}
+.hero .nav .status{white-space:nowrap;padding:8px 10px}
+@media(max-width:390px){
+  .hero .nav{top:12px;padding:0 12px}
+  .hero .nav .brand{gap:5px}
+  .hero .nav .brand>span:last-child{font-size:8px;letter-spacing:.1em}
+  .hero .nav .nav-actions{gap:4px}
+  .hero .nav .status{padding:7px 8px;font-size:8px}
+  .hero .nav .tab-link span{font-size:8px}
 }
 .hero-copy{top:54%}
 @media(min-width:650px){.hero .nav{top:22px}}
