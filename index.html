@@ -478,6 +478,20 @@ a:focus-visible{outline-color:#10b5a3}
 }
 @media(max-width:390px){.page{padding-top:18px}.nav{margin-bottom:16px}.hero-copy h1{font-size:clamp(25px,7vw,34px)}}
 
+
+/* Keep the navigation integrated over the artwork */
+.page{padding-top:0}
+.hero{position:relative}
+.hero-art{position:relative}
+.hero .nav{
+  position:absolute;z-index:4;top:18px;left:50%;
+  width:min(calc(100% - 34px),530px);
+  margin:0;transform:translateX(-50%);
+}
+.hero-copy{top:54%}
+@media(min-width:650px){.hero .nav{top:22px}}
+@media(max-width:390px){.hero .nav{top:14px}}
+
 </style>
 </head>
 <body>
@@ -487,14 +501,15 @@ a:focus-visible{outline-color:#10b5a3}
 <div class="bg-orb bg-orb-3"></div>
 
 <main class="page">
-<header class="nav">
-<a class="brand" href="#" aria-label="Home"><span class="mark">ΛS</span><span>PERSONAL PROFILE</span></a>
-<div class="nav-actions"><a class="status tab-link" href="https://4ksh2574.github.io/EssentialTab/" aria-label="Open EssentialTab new tab">↗ <span>NEW TAB</span></a><div class="status"><span class="dot"></span> welcome</div></div>
-</header>
+
 
 <section class="hero" aria-label="Profile">
 <div class="hero-art">
   <img src="MC.png" alt="Minecraft-inspired profile artwork" fetchpriority="high">
+<header class="nav">
+<a class="brand" href="#" aria-label="Home"><span class="mark">ΛS</span><span>PERSONAL PROFILE</span></a>
+<div class="nav-actions"><a class="status tab-link" href="https://4ksh2574.github.io/EssentialTab/" aria-label="Open EssentialTab new tab">↗ <span>NEW TAB</span></a><div class="status"><span class="dot"></span> welcome</div></div>
+</header>
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-copy">
     <span class="hero-eyebrow">PERSONAL SPACE · AXo</span>
